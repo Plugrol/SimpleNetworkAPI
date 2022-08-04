@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package de.mika.network.server;
+package de.mika.network.api.server;
 
-import de.mika.network.NetworkEntity;
-import de.mika.network.socket.DataPacket;
+import de.mika.network.api.NetworkEntity;
+import de.mika.network.api.socket.DataPacket;
 
 public abstract class Server implements NetworkEntity
 {
@@ -32,42 +32,50 @@ public abstract class Server implements NetworkEntity
      *
      * @param interval interval is the number of the period, this is worked in milliseconds
      */
-    abstract void setInterval(int interval);
+    protected abstract void setInterval(int interval);
 
     /**
      * This method sets whether further connections are accepted
      *
      * @param authorization sets whether connections are accepted
      */
-    abstract void setIgnoreConnections(boolean authorization);
+    protected abstract void setIgnoreConnections(boolean authorization);
 
     /**
      * This method sets whether further packets are accepted
      *
      * @param authorization sets whether packets are accepted
      */
-    abstract void setIgnorePackets(boolean authorization);
+    public abstract void setIgnorePackets(boolean authorization);
 
     /**
      * The method sends a packet to a specified client.
      *
      * @param clientId specifies the client to which the packet is sent
-     * @param packet can set any serializable data type
+     * @param packet   can set any serializable data type
      */
-    abstract void sendPacket(String clientId, DataPacket packet);
+    public abstract void sendPacket(String clientId, DataPacket packet);
+
+    /**
+     * The method sends a packet to a specified client.
+     *
+     * @param clientId specifies the client to which the packet is sent
+     * @param packet   can set any serializable data type
+     */
+    public abstract DataPacket sendAnsweredPacket(String clientId, DataPacket packet);
 
     /**
      * The method sends a packet to a specified group.
      *
-     * @param group specifies the group to which the packet is sent
+     * @param group  specifies the group to which the packet is sent
      * @param packet can set any serializable data type
      */
-    abstract void broadcastPacket(String group, DataPacket packet);
+    public abstract void broadcastPacket(String group, DataPacket packet);
 
     /**
      * The method sends a packet to all clients
      *
      * @param dataPacket can set any serializable data type
      */
-    abstract void broadcastPacket(DataPacket dataPacket);
+    public abstract void broadcastPacket(DataPacket dataPacket);
 }

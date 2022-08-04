@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 
-package de.mika.network.socket;
+package de.mika.network.api;
 
-import java.io.Serializable;
-
-public record Sign(String sender, String group) implements Serializable
+public class InvalidPacketException extends IllegalArgumentException
 {
 }

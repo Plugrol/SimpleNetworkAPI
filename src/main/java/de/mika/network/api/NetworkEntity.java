@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package de.mika.network;
+package de.mika.network.api;
 
-import de.mika.network.pipeline.ChannelHandler;
+import de.mika.network.api.pipeline.ChannelHandler;
 
 import java.net.InetSocketAddress;
 

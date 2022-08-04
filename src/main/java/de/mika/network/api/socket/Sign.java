@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-package de.mika.network.socket;
+package de.mika.network.api.socket;
 
-import java.net.Socket;
+import java.io.Serializable;
 
-public interface SocketEntity
+public record Sign(String sender, String group) implements Serializable
 {
-
-    Socket getSocket();
 }

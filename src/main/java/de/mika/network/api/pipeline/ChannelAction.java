@@ -14,8 +14,16 @@
  * limitations under the License.
  */
 
-package de.mika.network.pipeline;
+package de.mika.network.api.pipeline;
 
-public class Execution
+import de.mika.network.api.socket.DataPacket;
+
+import java.io.Serializable;
+import java.net.Socket;
+
+public interface ChannelAction
 {
+
+    Serializable[] run(DataPacket input, Socket tempSocket);
+
 }

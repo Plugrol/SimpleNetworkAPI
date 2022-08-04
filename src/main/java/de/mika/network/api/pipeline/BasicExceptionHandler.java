@@ -14,15 +14,11 @@
  * limitations under the License.
  */
 
-package de.mika.network.pipeline;
+package de.mika.network.api.pipeline;
 
-import de.mika.network.socket.DataPacket;
-
-import java.net.Socket;
-
-public interface ChannelAction
+public interface BasicExceptionHandler
 {
 
-    DataPacket run(DataPacket input, Socket tempSocket);
+    boolean handle(Throwable throwable, ChannelState handleState);
 
 }

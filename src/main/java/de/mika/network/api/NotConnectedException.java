@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package de.mika.network.pipeline;
+package de.mika.network.api;
 
-public interface BasicExceptionHandler
+/**
+ * @author Groldi
+ * @since 1.0.0-SNAPSHOT
+ */
+public class NotConnectedException extends UnsupportedOperationException
 {
-
-    boolean handle(Throwable throwable, ChannelState handleState);
-
 }

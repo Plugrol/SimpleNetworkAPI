@@ -14,13 +14,27 @@
  * limitations under the License.
  */
 
-package de.mika.network.pipeline;
+package de.mika.network.api.socket;
 
-public enum ChannelState
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class DataPacket extends ArrayList<Serializable>
 {
 
-    BEFORE,
-    EXECUTION,
-    AFTER
+    @Getter private final String ID;
+    @Getter @Setter private Sign sign;
+    @Getter @Setter private boolean reply;
+
+    public DataPacket(String id, Serializable... content)
+    {
+        this.ID = id;
+        this.reply = true;
+        this.addAll(Arrays.asList(content));
+    }
 
 }

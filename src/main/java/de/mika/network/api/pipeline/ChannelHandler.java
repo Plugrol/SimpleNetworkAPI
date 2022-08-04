@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package de.mika.network.pipeline;
+package de.mika.network.api.pipeline;
 
 import java.util.Map;
 

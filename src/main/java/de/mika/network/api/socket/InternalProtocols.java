@@ -14,16 +14,15 @@
  * limitations under the License.
  */
 
-package de.mika.network.socket;
+package de.mika.network.api.socket;
 
-import java.io.Serializable;
-
-public class LoginPacket extends DataPacket
+public enum InternalProtocols
 {
+    LOGIN,
+    RESPONSE;
 
-    public LoginPacket(Sign sign, Serializable... serializable)
+    @Override public String toString()
     {
-        super(InternalProtocols.LOGIN.toString(), sign, serializable);
+        return "__" + name() + "__";
     }
-
 }

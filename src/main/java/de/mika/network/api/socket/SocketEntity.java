@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package de.mika.network;
+package de.mika.network.api.socket;
 
-public class InvalidPacketException extends IllegalArgumentException
+public interface SocketEntity
 {
+
 }

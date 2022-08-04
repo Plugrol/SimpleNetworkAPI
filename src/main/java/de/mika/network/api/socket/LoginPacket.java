@@ -14,13 +14,16 @@
  * limitations under the License.
  */
 
-package de.mika.network.server;
+package de.mika.network.api.socket;
 
-import de.mika.network.socket.SocketEntity;
+import java.io.Serializable;
 
-
-public abstract class SocketServer extends Server implements SocketEntity
+public class LoginPacket extends DataPacket
 {
 
+    public LoginPacket(Sign sign, Serializable... serializable)
+    {
+        super(InternalProtocols.LOGIN.toString(), sign, serializable);
+    }
 
 }

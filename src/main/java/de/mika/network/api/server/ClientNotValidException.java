@@ -14,16 +14,20 @@
  * limitations under the License.
  */
 
-package de.mika.network.socket;
+package de.mika.network.api.server;
 
-public enum InternalProtocols
+import java.net.Socket;
+
+public class ClientNotValidException extends NullPointerException
 {
-    LOGIN,
-    RESPONSE;
+    private final Socket SOCKET;
 
-    @Override
-    public String toString()
+    public ClientNotValidException(Socket socket)
     {
-        return "__" + name() + "__";
+        this.SOCKET = socket;
+    }
+
+    public Socket getSocket() {
+        return SOCKET;
     }
 }

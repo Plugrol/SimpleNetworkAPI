@@ -14,20 +14,10 @@
  * limitations under the License.
  */
 
-package de.mika.network.server;
+package de.mika.network.api.client;
 
-import java.net.Socket;
+import java.io.IOException;
 
-public class ClientNotValidException extends NullPointerException
+public class RejectLoginException extends IOException
 {
-    private final Socket SOCKET;
-
-    public ClientNotValidException(Socket socket)
-    {
-        this.SOCKET = socket;
-    }
-
-    public Socket getSocket() {
-        return SOCKET;
-    }
 }

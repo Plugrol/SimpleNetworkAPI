@@ -14,10 +14,16 @@
  * limitations under the License.
  */
 
-package de.mika.network.client;
+package de.mika.network.api.server;
 
-import java.io.IOException;
+import de.mika.network.api.socket.SocketEntity;
 
-public class RejectLoginException extends IOException
+import java.net.ServerSocket;
+
+
+public abstract class SocketServer extends Server implements SocketEntity
 {
+
+    public abstract ServerSocket getSocket();
+
 }

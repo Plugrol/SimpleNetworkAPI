@@ -14,11 +14,13 @@
  * limitations under the License.
  */
 
-package de.mika.network.client;
+package de.mika.network.api.pipeline;
 
-import de.mika.network.socket.SocketEntity;
-
-public abstract class SocketClient extends Client implements SocketEntity
+public enum ChannelState
 {
+
+    BEFORE,
+    EXECUTION,
+    AFTER
 
 }
